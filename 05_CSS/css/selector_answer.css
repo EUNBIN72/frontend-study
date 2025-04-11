@@ -1,38 +1,49 @@
+/* 선택자는 위에서부터 내려오면서 작성하는 것이 좋음 */
+/* (중간에 생략 가능한 선택자는 생략해도 무방) */
+/* 개발자 도구에서 선택자 : 우클릭 -> copy selector */
+
+
 /* 1. 14 라인의 <img>태그를 선택하는 선택자를 작성 */
-.logo img {
+header .logo img {
   border: 2px solid red;
 }
 
 /* 2. 18~28 라인의 <ul>태그를 선택하는 선택자를 작성(하위[후손] 선택자 필수) */
-.main-menu {
+header ul.main-menu {
   border: 2px solid rgb(221, 205, 31);
 }
 
 /* 3. 33~40 라인의 5번째 <a>태그의 <img>를 선택하는 선택자를 작성(가상 클래스 선택자 필수) */
-#global_aside img {
+#global_aside > a:nth-child(5) > img {
   border: 2px solid green;
 }
 
 /* 4. 45~60 라인의 class가 header인 태그를 선택하는 선택자를 작성(자식 선택자 필수) */
-.column-1 {
+#detail_list > ul.column-1 > li.header {
   border: 2px solid gray;
 }
 
 /* 5. 62~77 라인의 <ul>태그에서 3번째 <li>을 선택하는 선택자를 작성(가상 클래스 선택자 필수) */
-.header *:nth-child(3) {
-  color: olive;
+#detail_list > ul:nth-child(4) > li:nth-child(3) {
+  border: 2px solid aqua;
 }
+
+
 /* 6. 78 라인의 <h3>태그에 마우스를 올렸을 때의 선택자를 작성 */
-.h3:hover {
-  color: darkorchid;
+#detail_list > h3:last-child:hover {
+  border: 2px solid orange;
 }
 
 
 /* 7. 82~85 라인의 type이 text인 <input>태그에 focus 됐을 때의 선택자를 작성(속성 선택자 필수) */
 /* 단, 마지막 읽기 전용 input은 선택에서 제외 */
 /* border가 아닌 background-color로 테스트 할 것! */
-input:focus {
-  background-color: orange;
+input[type="text"]:focus:not(input[readonly]) {
+  background-color: skyblue;
+
+  /* focus 시 outline이 생김 */
+  outline: none;
+  border : 2px solid red
 }
 
 
