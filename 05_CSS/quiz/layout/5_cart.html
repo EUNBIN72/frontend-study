@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 공통 스타일 */
+    * {
+      box-sizing: border-box;
+    }
+
+    table {
+      border-collapse: collapse;
+      max-width: 700px;
+    }
+
+    .cart-background {
+      width: 100%;  /* 생략가능(배경이 전체적으로 꽉 차게 만들어줌) */
+      background-color: skyblue;
+      padding: 30px;
+    }
+
+    .inner {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cart-list {
+      width: 100%;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .cart-list th,
+    .cart-list td {
+      padding: 15px;
+      text-align: center;
+    }
+
+
+    img {
+      width: 50px;
+    }
+
+    .cart-list tr {
+      border-bottom: 1px solid skyblue;
+    }
+
+
+    /* Cart-list 에서 tr은 자식이 아님 (> 사용 불가)
+      : 자동으로 tbody가 존재하기 때문
+      cart-list의 tbody의 tr임 */
+
+
+    .cart-list th:nth-child(2) {
+      /* 의미 : 다른 셀들은 최소폭을 가져가면서 해당 셀은 최대 400px까지 늘어남 */
+      width: 400px;
+    }
+
+    .cart-list td:nth-child(2) {
+      text-align: left;
+    }
+
+    .cart-list tr:last-child td {
+      text-align: right;
+    }
+
+    td:nth-child(n+3) {
+      text-align: center;
+    }
+
+
+    .btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .btn-send {
+      padding: 10px 30px;
+      background-color: coral;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      cursor: pointer;  /* 커서를 올렸을 때 모양을 바꿔줌 */
+    }
+
+    .btn-send:hover {
+      background-color: chocolate;
+    }
+
+    .btn-send:active {
+      background-color: brown;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cart-background">
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="inner">
+      <h2>장바구니</h2>
+      <table class="cart-list">
+        <!-- 4행 5열 만들기 -->
+        <!-- <tbody class="cart-border"> -->
+          <!-- <tr>로 세로줄을 먼저 만들어줌 -->
+          <tr>
+            <!-- <th>(제목 줄)를 넣어줘야 굵은 글씨로 만들어짐 -->
+            <th></th>  
+            <th>ITEM</th>
+            <th>AMOUNT</th>
+            <th>PRICE</th>
+            <th>TOTAL</th>
+          </tr>  
+          <tr>
+            <td>
+              <img src="../layout/images/item1.png" alt="카메라">
+            </td>
+            <td>카메라</td>
+            <td>1</td>
+            <td>100,000</td>
+            <td>100,000</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../layout/images/item2.png" alt="신발">
+            </td>
+            <td>신발신발신발발</td>
+            <td>2</td>
+            <td>59,000</td>
+            <td>118,000</td>
+          </tr>
+          <tr>
+            <!-- 5개의 열을 합침 -->
+            <td colspan="5">주문금액 218,000원</td>
+          </tr>
+        <!-- </tbody> -->
+      </table>
+
+      <div class="btn">
+        <a href="">계속 쇼핑하기</a>
+        <button type="button" class="btn-send">구매하기</button>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
