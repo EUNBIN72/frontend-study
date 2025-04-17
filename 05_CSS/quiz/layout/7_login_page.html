@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+
+  * {
+      box-sizing: border-box;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+    .login-background{
+      background-color: lightgray;
+      padding: 20px 0;
+    }
+
+    .login-container {
+      width: 50%;
+      background-color: #fff;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+
+    .btn-in {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 20px;
+      
+    }
+
+    
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      
+      padding: 5px;
+    }
+
+    .btn:hover {
+      background-color: darkgray ;
+    }
+
+
+  .visible {
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="login-background">
+    <div class="login-container">
+
+        <div style="display: flex; padding-bottom: 20px;">
+          <div style="width: 15%;">
+            <label for="id-text">ID: </label>
+          </div>
+        <div style="width: 85%;">
+          <input type="text" id="id-text" class="form-input" style="width: 100%;">
+          </div>
+        </div>
+
+        <div style="display: flex; padding-bottom: 20px;">
+          <div style="width: 15%;">
+            <label for="pw-text">PW:</label>
+          </div>
+          <div style="width: 85%; position: relative;" >
+            <input type="text" id="pw-text" class="form-input" style="width: 100%;">
+            <span class="material-symbols-outlined visible">visibility</span>
+          </div>
+        </div>
+
+      <div class="btn-in">
+        <button  type="button" class="btn">로그인</button>
+        <button  type="button" class="btn">회원가입</button>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
