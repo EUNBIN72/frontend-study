@@ -157,8 +157,29 @@
   <hr>
 
   <!-- 범위 선택(기본값: 0~100) -->
-  <label for="volume">음략(0~100):</label>
-  <input type="range" id="volume" min="0" max="10" step="2">
+  <label for="volume">음량(0~100):</label>
+  <input type="range" id="volume" min="0" max="100" step="1">
+  <span id="volumeValue"></span>
+
+  <script>
+    const vol1 = document.querySelector('#volumeValue');  // HTML 요소 볼륨의 value 검색/찾기
+    const vol2 = document.querySelector('#volume'); 
+    vol1.textContent = vol2.value;  //초기화 해도 값이 나오게
+    vol2.addEventListener('input', function() {  //HTML 요소에 적용, input에 기능 적용(input 대신 change를 사용하면 클릭을 한 후에만 숫자 값이 적용됨)
+      vol1.textContent = vol2.value;  // 값이 변할 때마다 실행
+    });
+  </script>
+
+
+<!--  -->
+<!-- <script>
+  const volumeEl = document.querySelector('#volume');
+  const volumeValueEl = document.querySelector('#volumeValue');
+  volumeValueEl.textContent = volumeEl.value;
+  volumeEl.addEventListener('input', function () {
+    volumeValueEl.textContent = volumeEl.value;
+  });
+</script> -->
 
   <hr>
 
