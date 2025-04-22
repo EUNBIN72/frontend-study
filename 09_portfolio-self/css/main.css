@@ -2,8 +2,14 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 스크롤 이동을 부드럽게 */
+  /* 전체 페이지의 스크롤 (상속 안됨) */
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Noto sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: rgb(110, 103, 103);
@@ -24,9 +30,40 @@ a {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  margin: 24px auto 0;
+}
+
+.img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+
+
+/* -------------------------------공통 스타일--------------------------- */
+
+
+
+
+/* ---------------------------------HRADER----------------------------- */
 header {
   background-color: white;
   border-bottom: 2px solid darkgrey;
+
+   /* 고정된 헤더 만들기 */
+  /* fixed가 되면 width의 기준이 부모 요소가 아니라 뷰포트가 되면서 기준이 끊겨버리고, 내용에 맞춰서 최소한으로 축소됨 */
   width: 100%;
   position: fixed;
   top: 0;
@@ -80,11 +117,11 @@ header nav ul li a:hover::before {
   width: 100%;
 }
 
-/* VISUAL */
+/* ---------------------------------VISUAL------------------------- */
 .visual {
   margin-top: 80px;
   width: 100%;
-  background-color: lightgoldenrodyellow;
+  background-color: ghostwhite;
 }
 
 .visual > .inner {
@@ -97,4 +134,162 @@ header nav ul li a:hover::before {
 .visual > .inner .info {
   font-size: 30px;
 
+}
+
+/* -------------------------------ABOUT------------------------------- */
+.about {
+  padding: 150px 0;
+}
+
+.about > .inner {
+  position: relative;
+}
+
+.about .about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .about__wrapper .about__img {
+  width: 40%;
+}
+
+.about .about__wrapper .about__img img {
+  width: 100%;   /*부모 영역에서 100%로 꽉 차게*/
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1); /*원의 그림자*/
+}
+
+
+.about .about__wrapper .about__text {
+  width: 40%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+
+.about .about__wrapper .about__text .about__info {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 30px 0;
+}
+
+
+
+.about .about__wrapper .about__text .about__info_text {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.about .about__wrapper .about__text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+} 
+
+.about .about__wrapper .about__text li {
+  line-height: 1.8;
+}
+
+.icon_icon {
+  font-size: 40px;
+}
+
+
+/* --------------------------------SKILLS--------------------------------- */
+.skills {
+  padding: 150px 0;
+}
+
+.skills .skills__list {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 100px 0;
+}
+
+/* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의! */
+.skills .skills__list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateY(100px);
+
+  opacity: 0;
+  transition: 1s;
+}
+
+.skills.show .skills__list > li {
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+.skills .skills__list > li:nth-child(1) { transition-delay: 0.2s; }
+.skills .skills__list > li:nth-child(2) { transition-delay: 0.4s; }
+.skills .skills__list > li:nth-child(3) { transition-delay: 0.6s; }
+.skills .skills__list > li:nth-child(4) { transition-delay: 0.8s; }
+.skills .skills__list > li:nth-child(5) { transition-delay: 1s; }
+
+
+.skills .skills__list li div {
+  width: 100px;
+  height: 50px;
+  background-color: orange;
+  opacity: 0.6;
+  border-radius: 5px;
+  transform: rotate(-20deg);
+  transition: 0.5s;
+}
+
+.skills .skills__list li:hover div {
+  transform: rotate(0deg);
+  color: black;
+  
+}
+
+.skills .skills__list li div p {
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -1px;
+
+}
+
+.skills .skills__list li h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 60px 0 20px;
+}
+
+
+/* -------------------------------PROJECTS--------------------------- */
+.projects {
+  padding: 150px 0;
+}
+
+.projects .port {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+/* 수평 가운데 정렬 */
+/* .projects .port .port__img img {
+} */
+
+.projects .port .port__img, 
+.projects .port .port__text {   /*둘의 너비를 50%씩 배분*/
+  width: 50%;
+  height: 400px;
+}
+
+.projects .port .port__text {
+  border: 1px solid #333;
+  box-shadow: 1px;
 }
