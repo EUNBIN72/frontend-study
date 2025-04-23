@@ -35,6 +35,16 @@ a {
   font-weight: 800;
   text-align: center;
   margin-bottom: 50px;
+
+  /* title들의 애니메이션(왼쪽에서부터 나타남) */
+  transform: translateX(-200px);
+  transition: 1s;
+  opacity: 1;
+}
+
+.title.show {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .title::after {
@@ -49,6 +59,30 @@ a {
 .img {
   /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
   display: block;
+}
+
+/* 버튼과 같이 여러 곳에서 반복 사용되는 요소 */
+.btn {
+  width: 120px;
+  padding: 10px;
+  display: block;
+  border: 2px solid #333; 
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+
+  justify-content: center;
+  position: relative;
+  top: 95px;
+  left: 180px;
+}
+
+
+.btn:hover {
+  background-color: #333;
+  color: white;
 }
 
 
@@ -301,6 +335,7 @@ header nav ul li a:hover::before {
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
+
 }
 
 .projects .port .port__text h3 {
@@ -327,14 +362,111 @@ header nav ul li a:hover::before {
   font-weight: bold;
 }
 
+.projects .port .btn-group {
+  display: flex;
+  column-gap: 20px;
+}
 
 
+/* ---------------------------------CONTACT-------------------------------- */
+.contact {
+  padding: 200px 0;
+}
+
+.contact .contact__info li {
+  line-height: 2;
+  text-align: center;
+
+  /* transform 효과들을 1초동안 천천히 줌 */
+  /* 투명함에서 효과 시작 */
+  transition: 1s;
+  opacity: 0;
+}
+
+/* 애니메이션 효과 추가 -- 이메일과 전화번호 */
+.contact .contact__info li:nth-child(1),
+.contact .contact__info li:nth-child(3) {
+  /* 오른쪽에서 왼쪽으로 나타나는 */
+  transform: translateX(150px); 
+}
+
+.contact .contact__info li:nth-child(2) {
+  /* 왼쪽에서 오른쪽으로 나타나는 */
+  transform: translateX(-150px);
+}
+
+.contact.show .contact__info li {
+  /* 다시 원래 상태로 돌아옴 */
+  transform: translateX(0);
+  /* 색 표시됨 */
+  opacity: 1;
+}
+
+/* sns 이미지들 위치 */
+.contact .contact__sns {
+  margin-top: 20px;
+}
+
+/* sns 이미지들의 크기 조정 */
+.contact .contact__sns ul li img {
+  width: 40px;
+}
+
+/* sns 이미지들의 원래 위치치 */
+.contact .contact__sns ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+/* sns 이미지들 애니메이션 효과 */
+.contact .contact__sns ul li {
+  /* 아래 100px에서 위로 올라옴옴 */
+  transform: translateY(100px);
+  
+    transition: 1s;
+    opacity: 0;
+}
+
+.contact.show .contact__sns ul li {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 
+/* --------------------------------FOOTER------------------------------ */
+footer {
+  background-color: #000;
+  color: white;
+}
 
+footer .copyright {
+  text-align: center;
+  font-weight: 600;
+  line-height: 300px;
+  
+}
 
-
-
+/* -----------------------------------SCROLL TO TOP------------------------- */
+#to-top {
+  width: 45px;
+  height: 45px;
+  
+  border: 3px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 9;
+  transition: 0.5s;
+  /* 처음 상태는 투명에 x축으로 +100px 지점 */
+  opacity: 0;
+  transform: translateX(100px);
+}
 
 
 

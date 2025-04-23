@@ -411,7 +411,7 @@ header nav ul li a:hover::before {
   opacity: 0;   /*초기상태는 투명한 상태로*/
 }
 
-/* 애니메이션 효과 추가 -- 이메일과 전화번호호 */
+/* 애니메이션 효과 추가 -- 이메일과 전화번호 */
 .contact .contact__info li:nth-child(1), 
 .contact .contact__info li:nth-child(3) {
   /* 오른쪽에서 왼쪽으로 나타나는 */
@@ -426,7 +426,6 @@ header nav ul li a:hover::before {
 .contact.show .contact__info li {
   transform: translateX(0); /*다시 원래 상태로 돌아옴*/
   opacity: 1;  
-  
 }
 
 .contact .contact__sns {
@@ -555,11 +554,6 @@ footer .copyright {
   opacity: 0;
   transform: translateX(100px);
 }
-
-/* #to-top.show {
-  transform: translateX(0);
-} */
-
 
 
 
