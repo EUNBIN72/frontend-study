@@ -74,11 +74,17 @@
   <section class="visual">
     <div class="inner">
       <h1 class="font-en">
+        <img src="images/background_image.jpg" alt="배경 이미지">
         <span class="animate-slow">Full Stack Developer</span><br>
-        <span class="animate-slow">고은빈</span>
+        <span class="animate-slow">포트폴리오</span>
         <hr>
         <span class="animate-slow info">안녕하세요.</span><br>
-        <span class="animate-slow info">Full Stack 개발자 고은빈입니다.</span>
+        <span class="animate-slow info">Full Stack 개발자 고은빈입니다.</span><br>
+        <div id="to-down">
+          <a href="#about">
+            <button class="visual__btn" type="button">더 알아보기</button>
+          </a>
+        </div>
       </h1>
     </div>
   </section>
@@ -143,7 +149,7 @@
       <!-- 스킬 추가하려면 li 요소 복사 붙여넣기 -->
       <li>
         <div class="font-en">
-          <p>Java</p>
+          <img src="images/Java-Light.svg" alt="자바 이미지">
         </div>
         <h3 class="font-en">Java<br>Programing</h3>
         <ul>
@@ -154,7 +160,7 @@
       </li>
       <li>
         <div class="font-en">
-          <p>Html</p>
+          <img src="images/HTML.svg" alt="HTML 이미지지">
         </div>
         <h3 class="font-en">HTML5</h3>
         <ul>
@@ -164,9 +170,9 @@
       </li>
       <li>
         <div class="font-en">
-          <p>Css</p>
+          <img src="images/CSS.svg" alt="CSS 이미지지">
         </div>
-        <h3 class="font-en">CSS3</h3>
+        <h3 class="font-en">CSS</h3>
         <ul>
           <li>웹페이지 레이아웃 설계</li>
           <li>웹페이지 디자인</li>
@@ -175,7 +181,7 @@
       </li>
       <li>
         <div class="font-en">
-          <p>Js</p>
+          <img src="images/JavaScript.svg" alt="JS 이미지">
         </div>
         <h3 class="font-en">JavaScript</h3>
         <ul>
@@ -186,7 +192,7 @@
       </li>
       <li>
         <div class="font-en">
-          <p>React</p>
+          <img src="images/React-Light.svg" alt="REACT 이미지">
         </div>
         <h3 class="font-en">React JS</h3>
         <ul>
@@ -317,13 +323,18 @@
     <div class="contact__sns">
       <ul>
         <li>
-          <a href="#인스타그램주소" target="_blank">
+          <a href="https://www.instagram.com/" target="_blank">
             <img src="images/icon/icon_insta.png" alt="인스타그램">
           </a>
         </li>
         <li>
-          <a href="#유튜브주소" target="_blank">
+          <a href="https://www.youtube.com/?hl=ko&gl=KR&app=desktop" target="_blank">
             <img src="images/icon/icon_youtube.png" alt="유튜브">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/EUNBIN72" target="_blank">
+            <img src="images/Github-Light.svg" alt="깃허브">
           </a>
         </li>
       </ul>
@@ -341,14 +352,50 @@
     </div>
   </footer>
 
+<!-- MODAL -->
+  <!-- IMAGE MODAL -->
+  <!-- 모달 배경 -->
+  <div id="imageModal">
+    <!-- 모달의 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        이미지
+        <span class="material-symbols-outlined btn-close">close</span>
+      </div>
+      <div class="modal-body">
+        <!-- 방법1: 1px 투명한 GIF -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
+        <!-- 방법2: 스타일로 display: none + src는 나중에 지정 -->
+        <!-- 방법3: 샘플 로딩 이미지 -->
+      </div>
+    </div>
+  </div>
 
-<!-- SCROLL TO TOP -->
+  <!-- 모달 배경 -->
+  <div id="modal">
+    <!-- 모달의 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        README
+        <span class="material-symbols-outlined btn-close" >close</span>
+      </div>
+      <div class="modal-body">
+        <p>여기에 모달 내용이 들어갑니다.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- 상단으로 가는 SCROLL TO TOP -->
 <div id="to-top">
-  <!-- #을 찍어주면 상단으로 이동 됨 -->
   <a href="#">
-    <span class="material-symbols-outlined btn-close">arrow_upward</span>
+    <span class="material-symbols-outlined">arrow_upward</span>
   </a>
 </div>
+
 
 
 

@@ -424,7 +424,7 @@ header .btn-hamburger .material-symbols-outlined {
   opacity: 0;   /*초기상태는 투명한 상태로*/
 }
 
-/* 애니메이션 효과 추가 -- 이메일과 전화번호호 */
+/* 애니메이션 효과 추가 -- 이메일과 전화번호 */
 .contact .contact__info li:nth-child(1), 
 .contact .contact__info li:nth-child(3) {
   /* 오른쪽에서 왼쪽으로 나타나는 */
