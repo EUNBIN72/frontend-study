@@ -1,5 +1,5 @@
 // ScrollMagic 사용
-const spyEls = document.querySelectorAll('section.scroll-spy');
+const spyEls = document.querySelectorAll('.scroll-spy');
 console.log(spyEls);
 
 const controller = new ScrollMagic.Controller();
@@ -74,4 +74,4 @@ window.addEventListener('scroll', function () {
     toTopEl.style.opacity = '0';
     toTopEl.style.transform = 'translate(100px)';
   }
-})
+});
