@@ -43,6 +43,9 @@
   
 </head>
 <body>
+
+  <div style="overflow-x: hidden;">
+  <!-- HEADER -->
   <header id="header">
     <div class="inner">
       <!-- 로고 -->
@@ -67,29 +70,36 @@
           </li>
         </ul>
       </nav>
+
+      <!-- 햄버거 버튼 -->
+      <a href="javascript:void(0)" class="btn-hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
     </div>
   </header>
 
   <!-- VISUAL -->
-  <section class="visual">
+  <section class="visual font-en">
     <div class="inner">
-      <h1 class="font-en">
-        <img src="images/background_image.jpg" alt="배경 이미지">
-        <span class="animate-slow">Full Stack Developer</span><br>
-        <span class="animate-slow">포트폴리오</span>
-        <hr>
-        <span class="animate-slow info">안녕하세요.</span><br>
-        <span class="animate-slow info">Full Stack 개발자 고은빈입니다.</span><br>
-        <div id="to-down">
-          <a href="#about">
-            <button class="visual__btn" type="button">더 알아보기</button>
-          </a>
+      <div class="visual__text">
+          <div class="visual__port">
+            <span>Full Stack Developer</span><br>
+            <span>포트폴리오</span>
+            <hr>
+          </div>
+          <div class="text-box">
+            <span class="text"></span><span class="blink">|</span>
+          </div>  
+          <div id="to-down">
+            <a href="#about">
+              <button class="visual__btn" type="button">더 알아보기</button>
+            </a> 
+          </div>
         </div>
-      </h1>
+
     </div>
   </section>
-
-
+  
   <!-- ABOUT -->
   <section id="about" class="about">
     <div class="inner">
@@ -140,7 +150,6 @@
     </div>
   </section>
   
-
 <!-- SKILLS -->
 <section id="skills" class="skills scroll-spy">
   <div class="inner">
@@ -206,7 +215,6 @@
   </div>
 </section>
 
-
 <!-- PROJECTS -->
 <section id="projects" class="projects front-en">
   <div class="inner">
@@ -225,11 +233,10 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_1.jpg">
-              <span class="material-symbols-outlined btn-close">photo_library</span>이미지
+              <span class="material-symbols-outlined">photo_library</span>이미지
             </a>
-            
             <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined btn-close">library_books</span>README
+              <span class="material-symbols-outlined">library_books</span>README
             </a>
             
           </div>
@@ -238,7 +245,7 @@
 
     <div class="port">   
       <div class="port__img">
-        <img src="images/work_2.jpg" alt="프로젝트 이미지1">
+        <img src="images/work_2.jpg" alt="프로젝트 이미지2">
       </div>
       <div class="port__text">
         <h3>프로젝트명</h3>
@@ -250,10 +257,10 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_2.jpg">
-              <span class="material-symbols-outlined btn-close">photo_library</span>이미지
+              <span class="material-symbols-outlined">photo_library</span>이미지
             </a>
             <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined btn-close">library_books</span>README
+              <span class="material-symbols-outlined">library_books</span>README
             </a>
           </div>
       </div>
@@ -261,7 +268,7 @@
 
     <div class="port">   
       <div class="port__img">
-        <img src="images/work_3.jpg" alt="프로젝트 이미지1">
+        <img src="images/work_3.jpg" alt="프로젝트 이미지3">
       </div>
       <div class="port__text">
         <h3>프로젝트명</h3>
@@ -273,10 +280,10 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_3.jpg">
-              <span class="material-symbols-outlined btn-close">photo_library</span>이미지
+              <span class="material-symbols-outlined">photo_library</span>이미지
             </a>
             <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined btn-close">library_books</span>README
+              <span class="material-symbols-outlined">library_books</span>README
             </a>
           </div>
       </div>
@@ -284,7 +291,7 @@
 
     <div class="port">   
       <div class="port__img">
-        <img src="images/work_4.jpg" alt="프로젝트 이미지1">
+        <img src="images/work_4.jpg" alt="프로젝트 이미지4">
       </div>
       <div class="port__text">
         <h3>프로젝트명</h3>
@@ -296,10 +303,10 @@
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_4.jpg">
-              <span class="material-symbols-outlined btn-close">photo_library</span>이미지
+              <span class="material-symbols-outlined">photo_library</span>이미지
             </a>
             <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined btn-close">library_books</span>README
+              <span class="material-symbols-outlined">library_books</span>README
             </a>
           </div>
       </div>
@@ -307,50 +314,52 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact font-en scroll-spy">
-  <div class="inner">
-    <h2 class="title font-en scroll-spy">CONTACT</h2>
-    <div class="contact__info">
-      <ul>
-        <li>
-          <a href="https://github.com/EUNBIN72" target="_blank">github.com/EUNBIN72</a>
-        </li>
-        <li>010-1234-5678</li>
-        <li>ABCDEF@naver.com</li>
-      </ul>
-    </div>
-    <div class="contact__sns">
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img src="images/icon/icon_insta.png" alt="인스타그램">
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/?hl=ko&gl=KR&app=desktop" target="_blank">
-            <img src="images/icon/icon_youtube.png" alt="유튜브">
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/EUNBIN72" target="_blank">
-            <img src="images/Github-Light.svg" alt="깃허브">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-  <footer>
+  <!-- CONTACT -->
+  <section id="contact" class="contact font-en scroll-spy">
     <div class="inner">
-      <p class="copyright">
-        &copy; <span class="this-year"></span>
-        <span class="font-en">Ko Eun Bin. All Rights Reserved.</span>
-      </p>
+      <h2 class="title font-en scroll-spy">CONTACT</h2>
+      <div class="contact__info">
+        <ul>
+          <li>
+            <a href="https://github.com/EUNBIN72" target="_blank">github.com/EUNBIN72</a>
+          </li>
+          <li>010-1234-5678</li>
+          <li>ABCDEF@naver.com</li>
+        </ul>
+      </div>
+      <div class="contact__sns">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="images/icon/icon_insta.png" alt="인스타그램">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/?hl=ko&gl=KR&app=desktop" target="_blank">
+              <img src="images/icon/icon_youtube.png" alt="유튜브">
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/EUNBIN72" target="_blank">
+              <img src="images/Github-Light.svg" alt="깃허브">
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- FOOTER -->
+    <footer>
+      <div class="inner">
+        <p class="copyright">
+          &copy; <span class="this-year"></span>
+          <span class="font-en">Ko Eun Bin. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+  </div>
+
 
 <!-- MODAL -->
   <!-- IMAGE MODAL -->

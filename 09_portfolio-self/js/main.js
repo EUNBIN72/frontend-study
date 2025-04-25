@@ -16,12 +16,12 @@ spyEls.forEach(function (spyEl) {
 
 
 // 모달창 띄우기
-const modalBtn = document.querySelector('.project .btn-modal');
+const modalBtns = document.querySelectorAll('#projects .btn-modal');
 const modalEl = document.querySelector('#modal');
 const closeEl = document.querySelector('#modal .btn-close');
 
 
-const imageModalBtnList = document.querySelectorAll('.project .btn-modal-image');
+const imageModalBtnList = document.querySelectorAll('#projects .btn-modal-image');
 const imageModalEl = document.querySelector('#imageModal');
 const imageCloseBtn = document.querySelector('#imageModal .btn-close');
 const imageEl = document.querySelector('#imageModal img');
@@ -30,11 +30,13 @@ const imageEl = document.querySelector('#imageModal img');
 // Quiz: modalBtn 누르면 모달창이 뜨고 closeBtn 누르면 닫히도록 만들기
 // style 속성: JS로 CSS 스타일을 제어할 수 있는 속성
 // 예시 : 요소.style.css속성 = "";
+modalBtns.forEach(function (modalBtn) {
 modalBtn.addEventListener("click", function () {
   modalEl.style.display = 'flex';
 });
 closeEl.addEventListener("click", function () {
   modalEl.style.display = 'none';
+});
 });
 
 
@@ -116,3 +118,41 @@ window.addEventListener('scroll', function () {
 
 
 
+// visual 타이핑 애니메이션 적용
+const content  = "안녕하세요. \n Full Stack 개발자 고은빈입니다.";
+const text = document.querySelector(".text");
+let i = 0;
+
+function typing() {
+  let txt = content[i++];
+  text.innerHTML += txt=== "\n" ? "<br/>": txt;
+  if (i > content.length) {
+    text.textContent = "";
+    i=0;
+  }
+} setInterval(typing, 100)
+
+
+
+// 모바일용 메뉴
+const btnHamburger = document.querySelector('.btn-hamburger');
+const navEl = document.querySelector('header nav');
+const menuItems = document.querySelectorAll('header nav ul li a');
+
+btnHamburger.addEventListener('click', function () {
+//   if (navEl.classList.contains('active')) {
+//     navEl.classList.remove('active');
+//   } else {
+//     navEl.classList.add('active');
+//   }
+  navEl.classList.toggle('active');
+});
+
+
+// a 태그를 눌렀을 때 햄버거 버튼 끔
+// 반복적으로 꺼내오는 기능 : for each
+menuItems.forEach(function (menuItems) {
+  menuItems.addEventListener('click', function () {
+    navEl.classList.remove('active');
+  });
+});

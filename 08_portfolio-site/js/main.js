@@ -37,7 +37,7 @@ const swiper = new Swiper('.project .swiper', {
 });
 
 // 모달창 띄우기
-const modalBtn = document.querySelector('.project .btn-modal');
+const modalBtns = document.querySelectorAll('.project .btn-modal');
 const modalEl = document.querySelector('#modal');
 const closeEl = document.querySelector('#modal .btn-close');
 
@@ -51,11 +51,13 @@ const imageEl = document.querySelector('#imageModal img');
 // Quiz: modalBtn 누르면 모달창이 뜨고 closeBtn 누르면 닫히도록 만들기
 // style 속성: JS로 CSS 스타일을 제어할 수 있는 속성
 // 예시 : 요소.style.css속성 = "";
+modalBtns.forEach(function (modalBtn){
 modalBtn.addEventListener("click", function () {
   modalEl.style.display = 'flex';
 });
 closeEl.addEventListener("click", function () {
   modalEl.style.display = 'none';
+});
 });
 
 
@@ -116,6 +118,7 @@ thisYear.textContent = new Date().getFullYear();
 
 // 페이지 최상단으로 이동
 const toTopEl = document.querySelector('#to-top');
+const visualSpanEls = document.querySelectorAll('.visual h1 span')
 
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체
@@ -129,9 +132,24 @@ window.addEventListener('scroll', function () {
     // 요소 보이기
     toTopEl.style.opacity = '1';
     toTopEl.style.transform = 'translateX(0)';
+
+    // visual 섹션 애니메이션 빼기
+    // 리스트 안에서 반복적으로 꺼내옴
+    visualSpanEls.forEach(function (visualSpan) {
+        visualSpan.classList.remove('animate-flash');
+      });
+    
+
   } else {
+    // 요소 숨기기
     toTopEl.style.opacity = '0';
-    toTopEl.style.transform = 'translate(100px)';
+    toTopEl.style.transform = 'translateX(100px)';
+
+    // visual 섹션 애니메이션 넣기
+
+    visualSpanEls.forEach(function (visualSpan) {
+      visualSpan.classList.add('animate-flash');
+    });
   }
 });
 
