@@ -176,17 +176,24 @@ header .btn-hamburger .material-symbols-outlined {
   background-image: url("/09_portfolio-self/images/background_image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.4;
+  z-index: -1;
 }
+
+.visual > .inner {
+  height: 100%;
+}
+
 .visual__text {
   width: 100%;
   height: 100%;
   
-  position: absolute;
-  top: 200px;
   color: black;
   font-weight: 700;
-  margin-left: 1%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .visual__text .visual__port {
@@ -205,6 +212,7 @@ header .btn-hamburger .material-symbols-outlined {
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
+  border: 1px solid #222;
 }
 
 .blink {
@@ -641,14 +649,19 @@ footer .copyright {
   }
 
   header nav {
-    background-color: #fff8e8;
+    background-color: #f3f3f3;
     position: fixed;
-    top: 80px;
-    left: 0;
+    top: 82px;
+    left: 30%;
     width: 100%;
     height: 0;
+    /* padding: 0 20px; */
     transition: 0.3s;
     overflow: hidden; 
+  }
+
+  header nav li {
+    margin: 20px ;
   }
 
   header nav.active {
@@ -691,8 +704,8 @@ footer .copyright {
     text-align: center;
   }
 
-  .about .about__wrapper .about__text .about__info {
-    
+  .about .about__text {
+    align-items: center;
   }
 
   .skills {
