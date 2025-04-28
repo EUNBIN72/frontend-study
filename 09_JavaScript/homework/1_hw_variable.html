@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-  <style>
-    .bob .add {
-      display: flex;
-      padding: 5px;
-    }
+    <style>
+      .spongebob img {
+        width: 100px;
+        height: 100px;
+        max-width: 1000px;
+        max-height: 1000px;
+      }
 
-    .bob img {
-      width: 100px;
-      height: 100px;
-    }
+      .size img {
+        width: 100px;
+        height: 100px;
+        max-width: 1000px;
+        max-height: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spongebob">
+      <h1>1. 자라나라 스폰지밥</h1>
+      <button type="button">+</button>
+      <br />
+      <img src="../images/spongebob.webp" alt="스폰지밥 이미지" />
+    </div>
 
+    <hr />
 
-    .size .size_btn {
-      margin-left: 10px;
-    }
+    <div class="size">
+      <h1>이미지 크기 조정</h1>
+      <p>가로 : <input type="text" class="width" /></p>
+      <p>
+        세로 : <input type="text" class="height" />
+        <button type="button">변경</button>
+      </p>
+      <img src="../images/star.webp" alt="뚱이 이미지" class="star" />
+    </div>
 
-    .size img {
-      width: 100px;
-      height: 100px;
-    }
+    <script>
+      const bobbtn = document.querySelector("button");
+      const bobimage = document.querySelector(".spongebob > img");
+      bobbtn.addEventListener("click", function () {
+        // 속성 변화가 아니기 때문에 width, height는 선언해줘야 됨
+        const currentWidth = bobimage.width;
+        const currentHeight = bobimage.height;
 
-  </style>
+        bobimage.style.width = currentWidth + 100 + "px";
+        bobimage.style.height = currentHeight + 100 + "px";
+      });
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      const width = document.querySelector(".width");
+      const height = document.querySelector(".height");
+      const starimage = document.querySelector("div img.star");
+      const starbtn = document.querySelector("div p button");
 
-</head>
-<body>
-  <div class="bob">
-    <h1>1. 자라나라 스폰지밥</h1>
-    <button type="button"><span class="material-symbols-outlined add">add</span></button> <br>
-    <img src="../images/spongebob.webp" alt="스폰지밥 이미지">
-  </div>
+      starbtn.addEventListener("click", function () {
+        const currentWidth = Number(width.value);
+        const currentHeight = Number(height.value);
 
-  <hr>
-
-  <div class="size">
-    <h1>2. 크기 조정</h1> <br>
-    <h3>이미지 크기 조정</h3>
-    <span>가로 : </span><input type="text"><br>
-    <span>세로 : </span><input type="text"><button type="button" class="size_btn">변경</button> <br>
-    <img src="../images/star.webp" alt="스폰지밥 이미지">
-
-  </div>
-
-
-
-  <script>
-const btn = document.querySelector('.bob .add');
-
-
-btns.forEach(function (btn){
-btn.addEventListener("click", function () {
-  btn.style.width = ;
-  btns.style.height = ;
-});
-});
-
-
-  </script>
-</body>
+        starimage.style.width = currentWidth + "px";
+        starimage.style.height = currentHeight + "px";
+      });
+    </script>
+  </body>
 </html>

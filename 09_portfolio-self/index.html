@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 오픈 그래프와 트위터 카드 설정(링크의 프리뷰) -->
-  <!-- 오픈 그래프 -->
-  <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
-  <!-- 
+    <!-- 오픈 그래프와 트위터 카드 설정(링크의 프리뷰) -->
+    <!-- 오픈 그래프 -->
+    <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
+    <!-- 
     type: 사이트 타입(website로 고정하면 됨)
     site_name: 웹사이트 이름, 브랜드 네임을 쓰면 좋음(ex. Goni's Portfolio, Goni.dev, MyPortfolio)
     title: 현재 페이지의 제목
@@ -15,419 +15,482 @@
     image: 썸네일 이미지(가장 중요함!), 절대 경로로 작성하는 것을 권장(https://부터 시작), 권장 크기(1200x630px 정도)
     url: 현재 사이트의 대표 URL
   -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Eunbin's Portfolio" />
-  <meta property="og:title" content="Eunbin | Full Stack Developer" />
-  <meta property="og:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
-  <meta property="og:image" content="https://your-domain.com/images/thumbnail.png" />
-  <meta property="og:url" content="https://your-domain.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eunbin's Portfolio" />
+    <meta property="og:title" content="Eunbin | Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다."
+    />
+    <meta
+      property="og:image"
+      content="https://your-domain.com/images/thumbnail.png"
+    />
+    <meta property="og:url" content="https://your-domain.com" />
 
+    <title>고은빈 포트폴리오</title>
+    <!-- 파비콘(favicon.ico)은 프로젝트 폴더의 최상위 경로에 포함시키면 자동 적용 -->
+    <!-- 최상위 경로에 없거나, ico가 아닌 별도 파일을 가진 경우에는 <link>로 적용  -->
+    <!-- <link rel="icon" href="favicon.ico"> -->
+    <!-- (참고) 파비콘 만들기 : https://iconifier.net -->
 
-  <title>고은빈 포트폴리오</title>
-<!-- 파비콘(favicon.ico)은 프로젝트 폴더의 최상위 경로에 포함시키면 자동 적용 -->
-  <!-- 최상위 경로에 없거나, ico가 아닌 별도 파일을 가진 경우에는 <link>로 적용  -->
-  <!-- <link rel="icon" href="favicon.ico"> -->
-  <!-- (참고) 파비콘 만들기 : https://iconifier.net -->
+    <!-- reset.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
 
+    <!-- 구글 웹 폰트 연결 -->
+    <!-- 경량화된 오픈 라이선트 폰트, 한글 지원하는지 확인 및 필요한 굵기 선택 후 연결 -->
+    <!-- 한글: Noto Sans Korean, 영문 : Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- reset.css -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/ npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <!-- 구글 웹 폰트 연결 -->
-  <!-- 경량화된 오픈 라이선트 폰트, 한글 지원하는지 확인 및 필요한 굵기 선택 후 연결 -->
-  <!-- 한글: Noto Sans Korean, 영문 : Open Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- 구글 머티리얼 아이콘 연결 -->
+    <!-- 구글에서 제공하는 아이콘, 글자처럼 취급 가능한 장점 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
 
-  <!-- Swiper CSS -->
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/ npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- main.css 연결 -->
+    <link rel="stylesheet" href="css/main.css" />
 
-  
-  <!-- 구글 머티리얼 아이콘 연결 -->
-  <!-- 구글에서 제공하는 아이콘, 글자처럼 취급 가능한 장점 -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  
-  <!-- main.css 연결 -->
-  <link rel="stylesheet" href="css/main.css">
-  
-  <!-- scrollMagic -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- scrollMagic -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-  <!-- main.js -->
-  <script defer src="js/main.js"></script>
-  
-<link rel="icon" href="images/favicon_io (1)/favicon-16x16.png">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-</head>
-<body>
+    <!-- main.js -->
+    <script defer src="js/main.js"></script>
 
-  <div style="overflow-x: hidden;">
-  <!-- HEADER -->
-  <header id="header">
-    <div class="inner">
-      <!-- 로고 -->
-      <a href="index.html" class="logo">
-        <img src="images/favicon_io (1)/favicon-32x32.png" alt="로고">
+    <link rel="icon" href="images/favicon_io (1)/favicon-16x16.png" />
+  </head>
+  <body>
+    <div style="overflow-x: hidden">
+      <!-- HEADER -->
+      <header id="header">
+        <div class="inner">
+          <!-- 로고 -->
+          <a href="index.html" class="logo">
+            <img src="images/favicon_io (1)/favicon-32x32.png" alt="로고" />
+          </a>
+
+          <!-- 메뉴 -->
+          <nav class="font-en">
+            <ul>
+              <li>
+                <a href="#about">01. ABOUT</a>
+              </li>
+              <li>
+                <a href="#skills">02. SKILLS</a>
+              </li>
+              <li>
+                <a href="#projects">03. PROJECTS</a>
+              </li>
+              <li>
+                <a href="#contact">04. CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- 햄버거 버튼 -->
+          <a href="javascript:void(0)" class="btn-hamburger">
+            <span class="material-symbols-outlined">menu</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- VISUAL -->
+      <section class="visual font-en">
+        <div class="inner">
+          <div class="visual__text">
+            <div class="visual__port">
+              <span>Full Stack Developer</span><br />
+              <span>포트폴리오</span>
+              <hr />
+            </div>
+            <div class="text-box">
+              <span class="text"></span><span class="blink">|</span>
+            </div>
+            <div id="to-down">
+              <a href="#about">
+                <button class="visual__btn" type="button">더 알아보기</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about">
+        <div class="inner">
+          <h2 class="title font-en scroll-spy">ABOUT</h2>
+          <div class="about__wrapper">
+            <div class="about__img">
+              <!-- 본인 프로필 이미지 넣기 -->
+              <img src="images/image.png" alt="프로필 이미지" />
+            </div>
+            <div class="about__text">
+              <!-- 본인 슬로건, 이름(생년월일), 학력 또는 교육 사항 등 작성 -->
+              <div class="about__box">
+                <ul>
+                  <div class="about__info">
+                    <span class="material-symbols-outlined icon_icon"
+                      >person</span
+                    >
+                    <div class="about__info_text">
+                      <h4 class="font-en">이름</h4>
+                      <li>고은빈</li>
+                    </div>
+                  </div>
+                </ul>
+                <ul>
+                  <div class="about__info">
+                    <span class="material-symbols-outlined icon_icon"
+                      >calendar_month</span
+                    >
+                    <div class="about__info_text">
+                      <h4 class="font-en">생년월일</h4>
+                      <li>2000.08.26</li>
+                    </div>
+                  </div>
+                </ul>
+                <ul>
+                  <div class="about__info">
+                    <span class="material-symbols-outlined icon_icon"
+                      >person</span
+                    >
+                    <div class="about__info_text">
+                      <h4 class="font-en">위치</h4>
+                      <li>서울시 마포구</li>
+                    </div>
+                  </div>
+                </ul>
+                <ul>
+                  <div class="about__info">
+                    <span class="material-symbols-outlined icon_icon"
+                      >school</span
+                    >
+                    <div class="about__info_text">
+                      <h4 class="font-en">교육</h4>
+                      <li>구디 아카데미</li>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="skills scroll-spy">
+        <div class="inner">
+          <h2 class="title font-en scroll-spy">SKILLS</h2>
+          <ul class="skills__list">
+            <!-- 스킬 추가하려면 li 요소 복사 붙여넣기 -->
+            <li>
+              <div class="font-en">
+                <img src="images/Java-Light.svg" alt="자바 이미지" />
+              </div>
+              <h3 class="font-en">Java<br />Programing</h3>
+              <ul>
+                <li>객체지향</li>
+                <li>파일 입출력</li>
+                <li>JDBC</li>
+              </ul>
+            </li>
+            <li>
+              <div class="font-en">
+                <img src="images/HTML.svg" alt="HTML 이미지지" />
+              </div>
+              <h3 class="font-en">HTML5</h3>
+              <ul>
+                <li>웹페이지 구조 설계</li>
+                <li>시맨틱 태그</li>
+              </ul>
+            </li>
+            <li>
+              <div class="font-en">
+                <img src="images/CSS.svg" alt="CSS 이미지지" />
+              </div>
+              <h3 class="font-en">CSS</h3>
+              <ul>
+                <li>웹페이지 레이아웃 설계</li>
+                <li>웹페이지 디자인</li>
+                <li>반응형 제작</li>
+              </ul>
+            </li>
+            <li>
+              <div class="font-en">
+                <img src="images/JavaScript.svg" alt="JS 이미지" />
+              </div>
+              <h3 class="font-en">JavaScript</h3>
+              <ul>
+                <li>DOM 조작, 제어</li>
+                <li>이벤트 처리</li>
+                <li>비동기 통신</li>
+              </ul>
+            </li>
+            <li>
+              <div class="font-en">
+                <img src="images/React-Light.svg" alt="REACT 이미지" />
+              </div>
+              <h3 class="font-en">React JS</h3>
+              <ul>
+                <li>SPA 개발</li>
+                <li>전역 상태 관리</li>
+                <li>클라이언트 라우팅</li>
+                <li>CSR 방식 앱개발</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="projects front-en">
+        <div class="inner">
+          <h2 class="title font-en scroll-spy">PROJECTS</h2>
+          <div class="port">
+            <div class="port__img">
+              <img src="images/work_1.jpg" alt="프로젝트 이미지1" />
+            </div>
+            <div class="port__text">
+              <h3>프로젝트명</h3>
+              <ul>
+                <li><span>주요 기능 : </span>주요 기능 설명</li>
+                <li>
+                  <span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring
+                  Boot
+                </li>
+                <li><span>GitHub : </span>깃허브 주소</li>
+                <li><span>URL : </span>배포 주소</li>
+              </ul>
+              <div class="btn-group">
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-modal-image"
+                  data-image-src="images/work_1.jpg"
+                >
+                  <span class="material-symbols-outlined">photo_library</span
+                  >이미지
+                </a>
+                <a href="javascript:void(0)" class="btn btn-modal">
+                  <span class="material-symbols-outlined">library_books</span
+                  >README
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="port">
+            <div class="port__img">
+              <img src="images/work_2.jpg" alt="프로젝트 이미지2" />
+            </div>
+            <div class="port__text">
+              <h3>프로젝트명</h3>
+              <ul>
+                <li><span>주요 기능 : </span>주요 기능 설명</li>
+                <li>
+                  <span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring
+                  Boot
+                </li>
+                <li><span>GitHub : </span>깃허브 주소</li>
+                <li><span>URL : </span>배포 주소</li>
+              </ul>
+              <div class="btn-group">
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-modal-image"
+                  data-image-src="images/work_2.jpg"
+                >
+                  <span class="material-symbols-outlined">photo_library</span
+                  >이미지
+                </a>
+                <a href="javascript:void(0)" class="btn btn-modal">
+                  <span class="material-symbols-outlined">library_books</span
+                  >README
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="port">
+            <div class="port__img">
+              <img src="images/work_3.jpg" alt="프로젝트 이미지3" />
+            </div>
+            <div class="port__text">
+              <h3>프로젝트명</h3>
+              <ul>
+                <li><span>주요 기능 : </span>주요 기능 설명</li>
+                <li>
+                  <span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring
+                  Boot
+                </li>
+                <li><span>GitHub : </span>깃허브 주소</li>
+                <li><span>URL : </span>배포 주소</li>
+              </ul>
+              <div class="btn-group">
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-modal-image"
+                  data-image-src="images/work_3.jpg"
+                >
+                  <span class="material-symbols-outlined">photo_library</span
+                  >이미지
+                </a>
+                <a href="javascript:void(0)" class="btn btn-modal">
+                  <span class="material-symbols-outlined">library_books</span
+                  >README
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="port">
+            <div class="port__img">
+              <img src="images/work_4.jpg" alt="프로젝트 이미지4" />
+            </div>
+            <div class="port__text">
+              <h3>프로젝트명</h3>
+              <ul>
+                <li><span>주요 기능 : </span>주요 기능 설명</li>
+                <li>
+                  <span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring
+                  Boot
+                </li>
+                <li><span>GitHub : </span>깃허브 주소</li>
+                <li><span>URL : </span>배포 주소</li>
+              </ul>
+              <div class="btn-group">
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-modal-image"
+                  data-image-src="images/work_4.jpg"
+                >
+                  <span class="material-symbols-outlined">photo_library</span
+                  >이미지
+                </a>
+                <a href="javascript:void(0)" class="btn btn-modal">
+                  <span class="material-symbols-outlined">library_books</span
+                  >README
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact font-en scroll-spy">
+        <div class="inner">
+          <h2 class="title font-en scroll-spy">CONTACT</h2>
+          <div class="contact__info">
+            <ul>
+              <li>
+                <a href="https://github.com/EUNBIN72" target="_blank"
+                  >github.com/EUNBIN72</a
+                >
+              </li>
+              <li>010-1234-5678</li>
+              <li>ABCDEF@naver.com</li>
+            </ul>
+          </div>
+          <div class="contact__sns">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <img src="images/icon/icon_insta.png" alt="인스타그램" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/?hl=ko&gl=KR&app=desktop"
+                  target="_blank"
+                >
+                  <img src="images/icon/icon_youtube.png" alt="유튜브" />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/EUNBIN72" target="_blank">
+                  <img src="images/Github-Light.svg" alt="깃허브" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="inner">
+          <p class="copyright">
+            &copy; <span class="this-year"></span>
+            <span class="font-en">Ko Eun Bin. All Rights Reserved.</span>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- MODAL -->
+    <!-- IMAGE MODAL -->
+    <!-- 모달 배경 -->
+    <div id="imageModal">
+      <!-- 모달의 내용 -->
+      <div class="modal-content">
+        <div class="modal-header">
+          이미지
+          <span class="material-symbols-outlined btn-close">close</span>
+        </div>
+        <div class="modal-body">
+          <!-- 방법1: 1px 투명한 GIF -->
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            alt="이미지"
+          />
+          <!-- 방법2: 스타일로 display: none + src는 나중에 지정 -->
+          <!-- 방법3: 샘플 로딩 이미지 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 모달 배경 -->
+    <div id="modal">
+      <!-- 모달의 내용 -->
+      <div class="modal-content">
+        <div class="modal-header">
+          README
+          <span class="material-symbols-outlined btn-close">close</span>
+        </div>
+        <div class="modal-body">
+          <p>여기에 모달 내용이 들어갑니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 상단으로 가는 SCROLL TO TOP -->
+    <div id="to-top">
+      <a href="#">
+        <span class="material-symbols-outlined">arrow_upward</span>
       </a>
-
-      <!-- 메뉴 -->
-      <nav class="font-en">
-        <ul>
-          <li>
-            <a href="#about">01. ABOUT</a>
-          </li>
-          <li>
-            <a href="#skills">02. SKILLS</a>
-          </li>
-          <li>
-            <a href="#projects">03. PROJECTS</a>
-          </li>
-          <li>
-            <a href="#contact">04. CONTACT</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- 햄버거 버튼 -->
-      <a href="javascript:void(0)" class="btn-hamburger">
-        <span class="material-symbols-outlined">menu</span>
-      </a>
     </div>
-  </header>
-
-  <!-- VISUAL -->
-  <section class="visual font-en">
-    <div class="inner">
-      <div class="visual__text">
-          <div class="visual__port">
-            <span>Full Stack Developer</span><br>
-            <span>포트폴리오</span>
-            <hr>
-          </div>
-          <div class="text-box">
-            <span class="text"></span><span class="blink">|</span>
-          </div>  
-          <div id="to-down">
-            <a href="#about">
-              <button class="visual__btn" type="button">더 알아보기</button>
-            </a> 
-          </div>
-        </div>
-
-    </div>
-  </section>
-  
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="inner">
-      <h2 class="title font-en scroll-spy">ABOUT</h2>
-      <div class="about__wrapper">
-        <div class="about__img">
-          <!-- 본인 프로필 이미지 넣기 -->
-          <img src="images/image.png" alt="프로필 이미지">
-        </div>
-        <div class="about__text">
-          <!-- 본인 슬로건, 이름(생년월일), 학력 또는 교육 사항 등 작성 -->
-          <div class="about__box">
-            <ul>
-              <div class="about__info">
-                <span class="material-symbols-outlined icon_icon">person</span>
-                <div class="about__info_text">
-                <h4 class="font-en">이름</h4>
-                <li>고은빈</li></div>
-              </div>
-            </ul>
-            <ul>
-              <div class="about__info">
-                <span class="material-symbols-outlined icon_icon">calendar_month</span>
-                  <div class="about__info_text">
-                  <h4 class="font-en">생년월일</h4>
-                  <li>2000.08.26</li></div>
-              </div>
-            </ul>
-            <ul>
-              <div class="about__info">
-                <span class="material-symbols-outlined icon_icon">person</span>
-                <div class="about__info_text">
-                <h4 class="font-en">위치</h4>
-                <li>서울시 마포구</li></div>
-              </div>
-            </ul>
-            <ul>
-              <div class="about__info">
-                <span class="material-symbols-outlined icon_icon">school</span>
-                <div class="about__info_text">
-                <h4 class="font-en">교육</h4>
-                <li>구디 아카데미</li></div>
-              </div>
-            </ul>
-          </div>
-      </div>
-      </div>
-    </div>
-  </section>
-  
-<!-- SKILLS -->
-<section id="skills" class="skills scroll-spy">
-  <div class="inner">
-    <h2 class="title font-en scroll-spy">SKILLS</h2>
-    <ul class="skills__list">
-      <!-- 스킬 추가하려면 li 요소 복사 붙여넣기 -->
-      <li>
-        <div class="font-en">
-          <img src="images/Java-Light.svg" alt="자바 이미지">
-        </div>
-        <h3 class="font-en">Java<br>Programing</h3>
-        <ul>
-          <li>객체지향</li>
-          <li>파일 입출력</li>
-          <li>JDBC</li>
-        </ul>
-      </li>
-      <li>
-        <div class="font-en">
-          <img src="images/HTML.svg" alt="HTML 이미지지">
-        </div>
-        <h3 class="font-en">HTML5</h3>
-        <ul>
-          <li>웹페이지 구조 설계</li>
-          <li>시맨틱 태그</li>
-        </ul>
-      </li>
-      <li>
-        <div class="font-en">
-          <img src="images/CSS.svg" alt="CSS 이미지지">
-        </div>
-        <h3 class="font-en">CSS</h3>
-        <ul>
-          <li>웹페이지 레이아웃 설계</li>
-          <li>웹페이지 디자인</li>
-          <li>반응형 제작</li>
-        </ul>
-      </li>
-      <li>
-        <div class="font-en">
-          <img src="images/JavaScript.svg" alt="JS 이미지">
-        </div>
-        <h3 class="font-en">JavaScript</h3>
-        <ul>
-          <li>DOM 조작, 제어</li>
-          <li>이벤트 처리</li>
-          <li>비동기 통신</li>
-        </ul>
-      </li>
-      <li>
-        <div class="font-en">
-          <img src="images/React-Light.svg" alt="REACT 이미지">
-        </div>
-        <h3 class="font-en">React JS</h3>
-        <ul>
-          <li>SPA 개발</li>
-          <li>전역 상태 관리</li>
-          <li>클라이언트 라우팅</li>
-          <li>CSR 방식 앱개발</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects front-en">
-  <div class="inner">
-    <h2 class="title font-en scroll-spy">PROJECTS</h2>
-    <div class="port">   
-      <div class="port__img">
-        <img src="images/work_1.jpg" alt="프로젝트 이미지1">
-      </div>
-      <div class="port__text"> 
-        <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_1.jpg">
-              <span class="material-symbols-outlined">photo_library</span>이미지
-            </a>
-            <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined">library_books</span>README
-            </a>
-            
-          </div>
-      </div>
-    </div>
-
-    <div class="port">   
-      <div class="port__img">
-        <img src="images/work_2.jpg" alt="프로젝트 이미지2">
-      </div>
-      <div class="port__text">
-        <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_2.jpg">
-              <span class="material-symbols-outlined">photo_library</span>이미지
-            </a>
-            <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined">library_books</span>README
-            </a>
-          </div>
-      </div>
-    </div>
-
-    <div class="port">   
-      <div class="port__img">
-        <img src="images/work_3.jpg" alt="프로젝트 이미지3">
-      </div>
-      <div class="port__text">
-        <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_3.jpg">
-              <span class="material-symbols-outlined">photo_library</span>이미지
-            </a>
-            <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined">library_books</span>README
-            </a>
-          </div>
-      </div>
-    </div>
-
-    <div class="port">   
-      <div class="port__img">
-        <img src="images/work_4.jpg" alt="프로젝트 이미지4">
-      </div>
-      <div class="port__text">
-        <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn btn-modal-image" data-image-src="images/work_4.jpg">
-              <span class="material-symbols-outlined">photo_library</span>이미지
-            </a>
-            <a href="javascript:void(0)" class="btn btn-modal">
-              <span class="material-symbols-outlined">library_books</span>README
-            </a>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact font-en scroll-spy">
-    <div class="inner">
-      <h2 class="title font-en scroll-spy">CONTACT</h2>
-      <div class="contact__info">
-        <ul>
-          <li>
-            <a href="https://github.com/EUNBIN72" target="_blank">github.com/EUNBIN72</a>
-          </li>
-          <li>010-1234-5678</li>
-          <li>ABCDEF@naver.com</li>
-        </ul>
-      </div>
-      <div class="contact__sns">
-        <ul>
-          <li>
-            <a href="https://www.instagram.com/" target="_blank">
-              <img src="images/icon/icon_insta.png" alt="인스타그램">
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/?hl=ko&gl=KR&app=desktop" target="_blank">
-              <img src="images/icon/icon_youtube.png" alt="유튜브">
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/EUNBIN72" target="_blank">
-              <img src="images/Github-Light.svg" alt="깃허브">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-    <footer>
-      <div class="inner">
-        <p class="copyright">
-          &copy; <span class="this-year"></span>
-          <span class="font-en">Ko Eun Bin. All Rights Reserved.</span>
-        </p>
-      </div>
-    </footer>
-  </div>
-
-
-<!-- MODAL -->
-  <!-- IMAGE MODAL -->
-  <!-- 모달 배경 -->
-  <div id="imageModal">
-    <!-- 모달의 내용 -->
-    <div class="modal-content">
-      <div class="modal-header">
-        이미지
-        <span class="material-symbols-outlined btn-close">close</span>
-      </div>
-      <div class="modal-body">
-        <!-- 방법1: 1px 투명한 GIF -->
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
-        <!-- 방법2: 스타일로 display: none + src는 나중에 지정 -->
-        <!-- 방법3: 샘플 로딩 이미지 -->
-      </div>
-    </div>
-  </div>
-
-  <!-- 모달 배경 -->
-  <div id="modal">
-    <!-- 모달의 내용 -->
-    <div class="modal-content">
-      <div class="modal-header">
-        README
-        <span class="material-symbols-outlined btn-close" >close</span>
-      </div>
-      <div class="modal-body">
-        <p>여기에 모달 내용이 들어갑니다.</p>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-<!-- 상단으로 가는 SCROLL TO TOP -->
-<div id="to-top">
-  <a href="#">
-    <span class="material-symbols-outlined">arrow_upward</span>
-  </a>
-</div>
-
-
-
-
-</body>
+  </body>
 </html>
