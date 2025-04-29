@@ -25,20 +25,11 @@
     
     
     // 3번 풀이
+    const avgSales = (1200 + 1300 + 1000) / 3; // 평균 판매량
+    const fourth = prompt('4분기 판매량은?', '0');
 
-    const se1 = 1200;
-    const se2 = 1300;
-    const se3 = 1000;
-
-    const avgSales = ((se1 + se2 + se3)/4);  //평균 판매량
-    
-    const se4 = Number(prompt('숫자를 입력하세요.', ''));
-    if (avgSales >= se4) {
-      result = "판매량이 평균 이상입니다.";
-    } else {
-      result = "판매량이 평균 미달입니다.";
-    }
-  
+    const result = fourth >= avgSales ? '판매량이 평균 이상입니다.' : '판매량이 평균 미달입니다.';
+    document.write(`1~3분기 평균 판매량: ${avgSales}<br>`);
     document.write(result);
 
   </script>

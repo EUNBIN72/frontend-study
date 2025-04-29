@@ -6,6 +6,11 @@
     <title>Document</title>
 
     <style>
+      body {
+        margin-top: 100px;
+        margin-left: 300px;
+      }
+
       .spongebob img {
         width: 100px;
         height: 100px;
@@ -32,7 +37,7 @@
     <hr />
 
     <div class="size">
-      <h1>이미지 크기 조정</h1>
+      <h1>2. 크기 조정</h1>
       <p>가로 : <input type="text" class="width" /></p>
       <p>
         세로 : <input type="text" class="height" />
@@ -42,6 +47,8 @@
     </div>
 
     <script>
+    // -----------------------------------1. 자라나라 스폰지밥------------------------------------------
+
       const bobbtn = document.querySelector("button");
       const bobimage = document.querySelector(".spongebob > img");
       bobbtn.addEventListener("click", function () {
@@ -52,6 +59,9 @@
         bobimage.style.width = currentWidth + 100 + "px";
         bobimage.style.height = currentHeight + 100 + "px";
       });
+
+    // -----------------------------------2. 크기 조정------------------------------------------
+
 
       const width = document.querySelector(".width");
       const height = document.querySelector(".height");
