@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    // 문제7
-    // 이중 for문을 이용해 
-    // 5행 5열의 표(table 태그 사용)를 만들고, 변수 num을 이용하여 1부터 25까지 출력하세요.
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 문제7
+      // 이중 for문을 이용해
+      // 5행 5열의 표(table 태그 사용)를 만들고, 변수 num을 이용하여 1부터 25까지 출력하세요.
 
-    // 하드 코딩 시 아래와 같음
-    // let table = '<table border="1">';
-    // table    += '  <tr>';
-    // table    += '    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>';
-    // table    += '  </tr>';
-    // table    += '  <tr>';
-    // table    += '    <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>';
-    // table    += '  </tr>';
-    // table    += '  <tr>';
-    // table    += '    <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>';
-    // table    += '  </tr>';
-    // table    += '  <tr>';
-    // table    += '    <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>';
-    // table    += '  </tr>';
-    // table    += '  <tr>';
-    // table    += '    <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>';
-    // table    += '  </tr>';
-    // table    += '</table>';
-    // document.write(table);
-    
-    // 풀이7
-    // 이중 for문 이용
-    // 풀이7
-// 이중 for문 이용
+      // 하드 코딩 시 아래와 같음
+      // let table = '<table border="1">';
+      // table    += '  <tr>';
+      // table    += '    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>';
+      // table    += '  </tr>';
+      // table    += '  <tr>';
+      // table    += '    <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>';
+      // table    += '  </tr>';
+      // table    += '  <tr>';
+      // table    += '    <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>';
+      // table    += '  </tr>';
+      // table    += '  <tr>';
+      // table    += '    <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>';
+      // table    += '  </tr>';
+      // table    += '  <tr>';
+      // table    += '    <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>';
+      // table    += '  </tr>';
+      // table    += '</table>';
+      // document.write(table);
 
-let table = '<table border="1">'; // 표 시작 태그와 테두리 설정
-let num = 1; // 셀에 들어갈 숫자를 세기 위한 변수, 1부터 시작
+      // 풀이7
+      // 이중 for문 이용
 
-// 바깥쪽 for문: 행 (<tr>)을 만듦. 5번 반복해서 5개의 행
-for (let i = 0; i < 5; i++) {
-  table += '<tr>'; // 각 행의 시작 태그
+      let table = '<table border="1">'; // 표 시작 태그와 테두리 설정
+      let num = 1; // 셀에 들어갈 숫자를 세기 위한 변수, 1부터 시작
 
-  // 안쪽 for문: 열 (<td>)을 만듦. 각 행마다 5번 반복해서 5개의 열
-  for (let j = 0; j < 5; j++) {
-    table += '<td>' + num + '</td>'; // 현재 num 값을 셀에 넣고 닫는 태그 추가
-    num++; // 다음 셀을 위해 num 값을 1 증가
-  }
+      // 바깥쪽 for문: 행 (<tr>)을 만듦. 5번 반복해서 5개의 행
+      for (let i = 0; i < 5; i++) {
+        table += "<tr>"; // 각 행의 시작 태그
 
-  table += '</tr>'; // 각 행의 닫는 태그
-}
+        // 안쪽 for문: 열 (<td>)을 만듦. 각 행마다 5번 반복해서 5개의 열
+        for (let j = 0; j < 5; j++) {
+          table += "<td>" + num + "</td>"; // 현재 num 값을 셀에 넣고 닫는 태그 추가
+          num++; // 다음 셀을 위해 num 값을 1 증가
+        }
 
-table += '</table>'; // 표 닫는 태그
-document.write(table); // 완성된 표 코드를 화면에 출력
+        table += "</tr>"; // 각 행의 닫는 태그
+      }
 
-    
-  </script>
-</head>
-<body>
-  
-</body>
+      table += "</table>"; // 표 닫는 태그
+      document.write(table); // 완성된 표 코드를 화면에 출력
+    </script>
+  </head>
+  <body></body>
 </html>

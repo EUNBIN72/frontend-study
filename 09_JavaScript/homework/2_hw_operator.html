@@ -1,187 +1,174 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2_hw_operator</title>
 
-
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-<style>
-  .ball-container {
-    display: flex;
-  }
-
-  .ball { 
-    margin: 30px;
-    font-size: 24px;
-
-  }
-</style>
-
-</head>
-<body>
-  <div class="ball">
-    <h1>1. 구슬놀이</h1> <br>
-    <h1>홀수? 짝수?</h1>
-    <button type="button" id="add-ball-btn">구슬 추가</button>
-    <button type="button" id="even-btn">홀짝</button>
-    <button type="button" id="reset-btn">초기화</button>
-    <!-- 구슬들 추가됨 -->
-    <div class="ball-container"></div>
-  </div>
-  
-  <br><br><hr>
-
-  <div class="calc">
-    <h1>2. 간이 계산기</h1>
-    <h1>계산기</h1>
-    <span>첫번째 값 : </span><input type="text" class="firstInput"><br>
-    <span>두번째 값 : </span><input type="text" class="secondInput"><br><br>
-    <button type="button" id="plus-btn">+</button>
-    <button type="button" id="minus-btn">-</button>
-    <button type="button" id="multi-btn">*</button>
-    <button type="button" id="divi-btn">/</button>
-    <button type="button" id="remain-btn">%</button>
-    <hr>
-    <span class="total">계산 결과 : </span>
-
-  </div>
-  
-  <br><br><hr>
-
-  <div >
-    <h1>3. 연산자 총정리</h1>
-  </div>
-
-  <br><br><hr>
-
-  <div >
-    <h1>4. 동해물과 백두산이</h1>
-    <h1>문자 누적하기</h1><br>
-    <input type="text" id="textInput" value="동해물과"> <button type="button" id="sumBtn">누적</button><br>
-    <textarea id="multi" cols="30" rows="6" style="resize: none"></textarea>
-
-  </div>
-
-
-
-
-
-
-  <script>
-    // -----------------------------------1. 구슬놀이------------------------------------------
-    
-    const addBallBtn = document.getElementById('add-ball-btn');
-    const evenBtn = document.getElementById('even-btn');
-    const resetBtn = document.getElementById('reset-btn');
-    // 구슬이 들어갈 공간
-    const ballContainer = document.querySelector('.ball-container');
-    
-    
-    // 구슬 추가 버튼
-    addBallBtn.addEventListener('click', function () {
-      // 세로운 구슬 요소 만들어
-      const ball = document.createElement('div');
-      ball.classList.add('ball');
-      ball.textContent = 'O';
-
-      ballContainer.appendChild(ball);
-    });
-
-    // 홀짝 버튼
-    evenBtn.addEventListener('click', function () {
-      // 현재 화면에 있는 구슬 요소들을 찾아
-      const balls = ballContainer.querySelectorAll('.ball');
-      // 찾은 구슬의 갯수를 셈
-      const count = balls.length;
-
-      // 갯수가 홀인지 짝인지 판단해서 결과
-      if (count % 2 ===0) {
-        alert(`구슬의 개수는 ${count}개로 짝수입니다!`);
-      } else {
-        alert(`구슬의 개수는 ${count}개로 홀수입니다!`);
+    <style>
+      .ball-container {
+        display: flex;
       }
-    });
 
-    // '초기화' 버튼을 클릭했을 때
-    resetBtn.addEventListener('click', function() {
-    // 구슬 컨테이너 안의 모든 내용을 지워서 구슬을 없애
-    ballContainer.innerHTML = '';
-});
+      .ball {
+        margin: 30px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball">
+      <h1>1. 구슬놀이</h1>
+      <br />
+      <h1>홀수? 짝수?</h1>
+      <button type="button" id="add-ball-btn">구슬 추가</button>
+      <button type="button" id="even-btn">홀짝</button>
+      <button type="button" id="reset-btn">초기화</button>
+      <!-- 구슬들 추가됨 -->
+      <div class="ball-container"></div>
+    </div>
 
-    // -----------------------------------2. 간이 계산기------------------------------------------
-    const firstText = document.querySelector('.firstInput');
-    const secondText = document.querySelector('.secondInput');
-    const btns = document.querySelectorAll('.calculator button'); 
-    const resultEl = document.querySelector('span');
-    
-    btns.forEach(function(btn,index){
-      btn.addEventListener('click', function(){
-      const firstValue = Number(firstText.value);
-      // console.log(typeof firstValue); => 문자열
-      const secondValue = Number(secondText.value);
-      let result = "";
+    <br /><br />
+    <hr />
 
-      // index 혹은 classList.contain으로 해서 쓰기
-      if(index === 0){
-        result = firstValue + secondValue;
-      }else if(index === 1){
-        result = firstValue - secondValue;
-      }else if(index === 2){
-        result = firstValue * secondValue;
-      }else if(index === 3){
-        result = firstValue / secondValue;
-      }else if(index === 4){
-        result = firstValue % secondValue;
-      };
+    <div class="calc">
+      <h1>2. 간이 계산기</h1>
+      <h1>계산기</h1>
+      <span>첫번째 값 : </span><input type="text" class="firstInput" /><br />
+      <span>두번째 값 : </span
+      ><input type="text" class="secondInput" /><br /><br />
+      <button type="button" id="plus-btn">+</button>
+      <button type="button" id="minus-btn">-</button>
+      <button type="button" id="multi-btn">*</button>
+      <button type="button" id="divi-btn">/</button>
+      <button type="button" id="remain-btn">%</button>
+      <hr />
+      <span class="total">계산 결과 : </span>
+    </div>
 
-      resultEl.textContent = `계산결과는: ${result}`;
-    });
-  });
+    <br /><br />
+    <hr />
 
+    <div>
+      <h1>3. 연산자 총정리</h1>
+    </div>
 
-    // -----------------------------------4. 동해물과 백두산이------------------------------------------
-    // textInput 이라는 HTML 요소들을 JS로 가져옴
-    // const textInput = document.querySelector('#textInput');   //id가 textInput인 input 태그
-    // const sumBtn = document.querySelector('#sumBtn');         //id가 sumBtn인 button 태그
-    // const multiTextarea = document.querySelector('#multi');  //id가 multi인 textarea 태그
+    <br /><br />
+    <hr />
 
-    // // 누적버튼(sumBtn)에 클릭 이벤트를 기다리는 리스너
-    // sumBtn.addEventListener('click' () {
-    //   // 1. input 필드에 현재 입력된 값을 가져옴
-    //   const inputText = textInput.value;
+    <div>
+      <h1>4. 동해물과 백두산이</h1>
+      <h1>문자 누적하기</h1>
+      <br />
+      <input type="text" id="textInput" value="동해물과" />
+      <button type="button" id="sumBtn">누적</button><br />
+      <textarea id="multi" cols="30" rows="6" style="resize: none"></textarea>
+    </div>
 
-    //   // 2. textarea에 현재 들어있는 값을 가져옴
-    //   const currentTextareaText = multiTextarea.value;
+    <script>
+      // -----------------------------------1. 구슬놀이------------------------------------------
 
-    //   // 3. textarea의 기존 내용에 input 필드에서 가져온 글자를 더해줌(누적)
-    //   multiTextarea.value = currentTextareaText + inputText;
+      const addBallBtn = document.getElementById("add-ball-btn");
+      const evenBtn = document.getElementById("even-btn");
+      const resetBtn = document.getElementById("reset-btn");
+      // 구슬이 들어갈 공간
+      const ballContainer = document.querySelector(".ball-container");
 
-    //   // 4. input 필드의 내용을 비움
-    //   textinput.value = '';
-      
-    // });
-    
+      // 구슬 추가 버튼
+      addBallBtn.addEventListener("click", function () {
+        // 세로운 구슬 요소 만들어
+        const ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.textContent = "O";
 
+        ballContainer.appendChild(ball);
+      });
 
-    const inputText = document.querySelector('#textInput');
-    const btn = document.querySelector('#sumBtn');
-    const textArea = document.querySelector('#multi');
+      // 홀짝 버튼
+      evenBtn.addEventListener("click", function () {
+        // 현재 화면에 있는 구슬 요소들을 찾아
+        const balls = ballContainer.querySelectorAll(".ball");
+        // 찾은 구슬의 갯수를 셈
+        const count = balls.length;
 
-    btn.addEventListener('click', function(){
-        if(inputText.value){
-          textArea.value += inputText.value; /*(textArea.value ? ' ': '' ) + */ input.value;
-          // 기존값에다가 추가할때 
+        // 갯수가 홀인지 짝인지 판단해서 결과
+        if (count % 2 === 0) {
+          alert(`구슬의 개수는 ${count}개로 짝수입니다!`);
+        } else {
+          alert(`구슬의 개수는 ${count}개로 홀수입니다!`);
+        }
+      });
+
+      // '초기화' 버튼을 클릭했을 때
+      resetBtn.addEventListener("click", function () {
+        // 구슬 컨테이너 안의 모든 내용을 지워서 구슬을 없애
+        ballContainer.innerHTML = "";
+      });
+
+      // -----------------------------------2. 간이 계산기------------------------------------------
+      const firstText = document.querySelector(".firstInput");
+      const secondText = document.querySelector(".secondInput");
+      const btns = document.querySelectorAll(".calculator button");
+      const resultEl = document.querySelector("span");
+
+      btns.forEach(function (btn, index) {
+        btn.addEventListener("click", function () {
+          const firstValue = Number(firstText.value);
+          // console.log(typeof firstValue); => 문자열
+          const secondValue = Number(secondText.value);
+          let result = "";
+
+          // index 혹은 classList.contain으로 해서 쓰기
+          if (index === 0) {
+            result = firstValue + secondValue;
+          } else if (index === 1) {
+            result = firstValue - secondValue;
+          } else if (index === 2) {
+            result = firstValue * secondValue;
+          } else if (index === 3) {
+            result = firstValue / secondValue;
+          } else if (index === 4) {
+            result = firstValue % secondValue;
+          }
+
+          resultEl.textContent = `계산결과는: ${result}`;
+        });
+      });
+
+      // -----------------------------------4. 동해물과 백두산이------------------------------------------
+      // textInput 이라는 HTML 요소들을 JS로 가져옴
+      // const textInput = document.querySelector('#textInput');   //id가 textInput인 input 태그
+      // const sumBtn = document.querySelector('#sumBtn');         //id가 sumBtn인 button 태그
+      // const multiTextarea = document.querySelector('#multi');  //id가 multi인 textarea 태그
+
+      // // 누적버튼(sumBtn)에 클릭 이벤트를 기다리는 리스너
+      // sumBtn.addEventListener('click' () {
+      //   // 1. input 필드에 현재 입력된 값을 가져옴
+      //   const inputText = textInput.value;
+
+      //   // 2. textarea에 현재 들어있는 값을 가져옴
+      //   const currentTextareaText = multiTextarea.value;
+
+      //   // 3. textarea의 기존 내용에 input 필드에서 가져온 글자를 더해줌(누적)
+      //   multiTextarea.value = currentTextareaText + inputText;
+
+      //   // 4. input 필드의 내용을 비움
+      //   textinput.value = '';
+
+      // });
+
+      const inputText = document.querySelector("#textInput");
+      const btn = document.querySelector("#sumBtn");
+      const textArea = document.querySelector("#multi");
+
+      btn.addEventListener("click", function () {
+        if (inputText.value) {
+          textArea.value += inputText.value;
+          /*(textArea.value ? ' ': '' ) + */ input.value;
+          // 기존값에다가 추가할때
           // textArea.value = textArea.value + inputText.value;
         }
-    });
-
-
-
-
-
-  </script>
-</body>
+      });
+    </script>
+  </body>
 </html>
