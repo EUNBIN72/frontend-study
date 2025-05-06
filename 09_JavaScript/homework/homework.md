@@ -27,3 +27,16 @@
 
 5. 함수 과제(2번, 3번 문제 제외(1번 문제만 풀어보세요))
    https://devkgn24.notion.site/17dfda8bae5780b5a52fdfa5f8a8bd2b
+
++++++
+질문
+
+엔터치면 자동완성이 되는데 우리가 배운 부분이랑 다른 부분은 예를 들면
+' 가 "로 나오고
+세미콜론이 붙고
+자동 줄바꿈
+
+이게 문법에 맞는건지
+smart기능을 끄는게 좋은지?
+-> preferences - settings - accept suggestion on enter 에서
+smart에서 off로
