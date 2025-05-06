@@ -34,16 +34,15 @@
     <div class="calc">
       <h1>2. 간이 계산기</h1>
       <h1>계산기</h1>
-      <span>첫번째 값 : </span><input type="text" class="firstInput" /><br />
-      <span>두번째 값 : </span
-      ><input type="text" class="secondInput" /><br /><br />
-      <button type="button" id="plus-btn">+</button>
-      <button type="button" id="minus-btn">-</button>
-      <button type="button" id="multi-btn">*</button>
-      <button type="button" id="divi-btn">/</button>
-      <button type="button" id="remain-btn">%</button>
+      <span>첫번째 값 : </span><input type="text" class="firstNum" /><br />
+      <span>두번째 값 : </span><input type="text" class="secondNum" /><br />
+      <button type="button" class="btn">+</button>
+      <button type="button" class="btn">-</button>
+      <button type="button" class="btn">*</button>
+      <button type="button" class="btn">/</button>
+      <button type="button" class="btn">%</button>
       <hr />
-      <span class="total">계산 결과 : </span>
+      계산 결과 : <span class="total"> </span>
     </div>
 
     <br /><br />
@@ -61,7 +60,7 @@
       <h1>문자 누적하기</h1>
       <br />
       <input type="text" id="textInput" value="동해물과" />
-      <button type="button" id="sumBtn">누적</button><br />
+      <button type="button" id="btnAdd">누적</button><br />
       <textarea id="multi" cols="30" rows="6" style="resize: none"></textarea>
     </div>
 
@@ -106,67 +105,65 @@
       });
 
       // -----------------------------------2. 간이 계산기------------------------------------------
-      const firstText = document.querySelector(".firstInput");
-      const secondText = document.querySelector(".secondInput");
-      const btns = document.querySelectorAll(".calculator button");
-      const resultEl = document.querySelector("span");
+      const firstNum = document.querySelector(".firstNum"); //첫번째 숫자 입력
+      const secondNum = document.querySelector(".secondNum"); //두번째 숫자 입력
+      const btns = document.querySelectorAll(".btn"); //연산자 버튼들
+      const total = document.querySelector(".total"); //결과표시
 
-      btns.forEach(function (btn, index) {
+      btns.forEach(function (btn) {
         btn.addEventListener("click", function () {
-          const firstValue = Number(firstText.value);
-          // console.log(typeof firstValue); => 문자열
-          const secondValue = Number(secondText.value);
-          let result = "";
+          const clickOperator = btn.textContent; //클릭된 버튼(연산자)의 텍스트 가져옴
 
-          // index 혹은 classList.contain으로 해서 쓰기
-          if (index === 0) {
-            result = firstValue + secondValue;
-          } else if (index === 1) {
-            result = firstValue - secondValue;
-          } else if (index === 2) {
-            result = firstValue * secondValue;
-          } else if (index === 3) {
-            result = firstValue / secondValue;
-          } else if (index === 4) {
-            result = firstValue % secondValue;
+          //입력된 필드의 값을 가져와서 숫자로 변환
+          const num1 = Number(firstNum.value);
+          const num2 = Number(secondNum.value);
+
+          switch (clickOperator) {
+            case "+":
+              total.textContent = num1 + num2;
+              break;
+
+            case "-":
+              total.textContent = num1 - num2;
+              break;
+
+            case "*":
+              total.textContent = num1 * num2;
+              break;
+
+            case "/":
+              total.textContent = num1 / num2;
+              break;
+
+            case "%":
+              total.textContent = num1 % num2;
+              break;
           }
 
-          resultEl.textContent = `계산결과는: ${result}`;
+          //계산 결과 화면에 표시
+
+          // 계산 후 input 값 초기화
+          firstNum.value = "";
+          secondNum.value = "";
         });
       });
 
       // -----------------------------------4. 동해물과 백두산이------------------------------------------
-      // textInput 이라는 HTML 요소들을 JS로 가져옴
-      // const textInput = document.querySelector('#textInput');   //id가 textInput인 input 태그
-      // const sumBtn = document.querySelector('#sumBtn');         //id가 sumBtn인 button 태그
-      // const multiTextarea = document.querySelector('#multi');  //id가 multi인 textarea 태그
 
-      // // 누적버튼(sumBtn)에 클릭 이벤트를 기다리는 리스너
-      // sumBtn.addEventListener('click' () {
-      //   // 1. input 필드에 현재 입력된 값을 가져옴
-      //   const inputText = textInput.value;
+      // textInput이라는 HTML 요소들을 JS로 가져옴
+      const inputText = document.querySelector("#textInput"); //id가 textInput인 input 태그
+      const btnAdd = document.querySelector("#btnAdd"); //id가 btnAdd 인 button 태그
+      const textArea = document.querySelector("#multi"); //id가 multi인 textarea 태그
 
-      //   // 2. textarea에 현재 들어있는 값을 가져옴
-      //   const currentTextareaText = multiTextarea.value;
-
-      //   // 3. textarea의 기존 내용에 input 필드에서 가져온 글자를 더해줌(누적)
-      //   multiTextarea.value = currentTextareaText + inputText;
-
-      //   // 4. input 필드의 내용을 비움
-      //   textinput.value = '';
-
-      // });
-
-      const inputText = document.querySelector("#textInput");
-      const btn = document.querySelector("#sumBtn");
-      const textArea = document.querySelector("#multi");
-
-      btn.addEventListener("click", function () {
+      // 누적버튼(sumBtn)에 클릭 이벤트를 기다리는 리스너
+      btnAdd.addEventListener("click", function () {
+        // 1. input 필드에 현재 입력된 값을 가져옴
+        // 2. textarea에 현재 들어있는 값을 가져옴
         if (inputText.value) {
+          // 3. textarea의 기존 내용에 input 필드에서 가져온 글자를 더해줌(누적)
           textArea.value += inputText.value;
-          /*(textArea.value ? ' ': '' ) + */ input.value;
-          // 기존값에다가 추가할때
-          // textArea.value = textArea.value + inputText.value;
+          // 4. input 필드의 내용을 초기화
+          inputText.values = "";
         }
       });
     </script>
