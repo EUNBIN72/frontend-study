@@ -9,10 +9,10 @@
   <body>
     <!-- 1번 -->
     <!-- - CGC A지점은 팝콘 하나와 음료 2개가 포함된 콤보 세트를 판매하고 있습니다.
-       - 사용자로부터 구매할 콤보 세트 개수를 입력 받으세요.
-       - 그 후, 버튼을 클릭하면 입력받은 개수만큼 콤보 세트의 이미지(팝콘1개와 음료 2개)를 출력하세요. -->
+        - 사용자로부터 구매할 콤보 세트 개수를 입력 받으세요.
+        - 그 후, 버튼을 클릭하면 입력받은 개수만큼 콤보 세트의 이미지(팝콘1개와 음료 2개)를 출력하세요. -->
     <h1>콤보세트</h1>
-    <label for="setCnt">개수: </label>
+    <label for="setCnt">개수 : </label>
     <input type="number" id="setCnt" />
     <button type="button" class="btn-order">주문</button>
     <div class="combo-list">
@@ -31,9 +31,9 @@
         // 이전에 표시된 이미지들 초기화
         comboList.innerHTML = "";
 
-        // 입력받은 갯수만큼 콤보 세으 이미지 생성하고 출력
+        // 입력받은 갯수만큼 콤보 세트 이미지 생성하고 출력
         for (i = 0; i < sets; i++) {
-          // 각 콤보 세트를 담을 컨데
+          // 각 콤보 세트를 담음
           const comboContainer = document.createElement("div");
           comboContainer.classList.add("combo-set");
 
@@ -58,6 +58,7 @@
         }
       });
     </script>
+    <hr>
 
     <!-- 2번 -->
     <!-- 테이블 생성 버튼을 클릭하면 prompt를 통해 행과 열의 값을 입력 받은 후, 행 x 열 크기의 테이블을 생성하세요. -->
@@ -95,19 +96,20 @@
         tableList.appendChild(tableBorder);
       }
     </script>
+    <hr>
 
     <!-- 3번 -->
     <!-- 문제의 조건에서 200g이 되면 귤을 그만 따야한다고 명시되어 있지만
           체험시작 버튼을 누르면 몇 g까지 딸 수 있는지 prompt로 입력받아 처리해 보세요. -->
     <!-- 귤 농장에서 바구니에 원하는 만큼 담는다.
-           귤 하나의 무게는 10g입니다.
-           귤은 최대 200g까지만 딸 수 있다.
-           체험 시작 버튼을 누르면 몇 g까지 딸 수 있는지 prompt로 입력받아 처리해보세요 -->
+        귤 하나의 무게는 10g입니다.
+        귤은 최대 200g까지만 딸 수 있다.
+        체험 시작 버튼을 누르면 몇 g까지 딸 수 있는지 prompt로 입력받아 처리해보세요 -->
     <h1>귤농장</h1>
     <button type="button" onclick="getOrange()">체험시작</button>
     <div class="basket" style="display: flex; flex-wrap: wrap">
       <!-- 귤이 들어갈 자리 -->
-     
+
 
     <script>
       // 3번
@@ -121,7 +123,7 @@
           createText.textContent = `귤 ${i * 10}g`;
           // createImg.textContent = "i*10g"
           // 이미지에는 textContent가 들어갈수없음
-          const createImg = document.createElement(" img");
+          const createImg = document.createElement("img");
           createImg.src = "images/gyul.png";
           createImg.alt = "귤";
           orangeBasket.appendChild(createText);
